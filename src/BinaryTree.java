@@ -1,8 +1,10 @@
+import java.util.List;
+
 public class BinaryTree {
-    public TreeNode NewNode(int k, String temp) {
+    private TreeNode NewNode(int key, String temp) {
         TreeNode newNode = new TreeNode();
         newNode.value = temp;
-        newNode.key = k;
+        newNode.key = key;
         newNode.left = newNode.right = null;
         return newNode;
     }
@@ -18,6 +20,14 @@ public class BinaryTree {
         }
 
         return node;
+    }
+    
+    static public void TreeTraversal(TreeNode node, List<String> arrayToFill){
+        if(node != null){
+            TreeTraversal(node.left, arrayToFill);
+            arrayToFill.add(node.value);
+            TreeTraversal(node.right, arrayToFill);
+        }
     }
 
 }
