@@ -16,10 +16,11 @@ public class Driver {
 
         startNode = binaryTreeObject.insert(startNode, 11, "eleven");
 
-
         List<String> resultArray = new ArrayList<>();
         BinaryTree.TreeTraversal(startNode,resultArray);
 
         resultArray.forEach(System.out::println);
+
+        binaryTreeObject.NoRecursionTraversal(startNode);
     }
 }
